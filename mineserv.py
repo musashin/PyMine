@@ -3,8 +3,9 @@ import subprocess
 import os.path
 import platform
 import tkFileDialog, Tkinter
+import localisation
 
-__worlds_directories = {('Windows','7') : r'%appdata%\.minecraft\saves'}
+__worlds_directories = {('Windows', '7'): r'%appdata%\.minecraft\saves'}
 def start_server(exe_path):
     subprocess.call(exe_path, cwd=os.path.dirname(os.path.abspath(exe_path)))
 
@@ -14,7 +15,7 @@ def get_worlds_directory():
     except Exception:
         root = Tkinter.Tk()
         root.withdraw()
-        return tkFileDialog.askdirectory(parent=root, initialdir="/", title='Please select a directory')
+        return tkFileDialog.askdirectory(parent=root, initialdir="/", title=localisation.get_dialog('worldFolderSelection'))
 
 if __name__ == '__main__':
     print get_worlds_directory()
