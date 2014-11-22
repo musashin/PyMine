@@ -12,7 +12,7 @@ class ServerProp:
         line_format = re.compile("""
                                 ^(?P<property>[\w\-]*)    #property
                                 [\s]*=*[\s]?
-                                (?P<value>[\w\s]*)        #value
+                                (?P<value>[\'\\\.\w\s]*)        #value
                                 ([(#|!)]
                                 (?P<comment>[\w\s]*))?$     #comment
                                 """, re.VERBOSE)
@@ -36,7 +36,7 @@ class ServerProp:
         self.lines[index][1] = value + '\n'
 
     def save(self):
-        with open(self.path+'x', 'w') as configFile:
+        with open(self.path, 'w') as configFile:
             for line in self.lines:
                 if line[0] and line[1]:
                     configFile.write("{}={}".format(line[0], line[1]))

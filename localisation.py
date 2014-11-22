@@ -1,8 +1,8 @@
 __author__ = 'Nicolas'
 
 import locale
-__frenchDialogs__ = {'worldFolderSelection': 'Choisis le dossier ou se trouvent tes mondes:'}
-__englishDialogs__ = {'worldFolderSelection': 'Select the folder where your worlds are located:'}
+__frenchDialogs__ = {'worldFolderSelection': 'Choisis le dossier ou se trouvent tes mondes:', 'worldpick': 'Choisis ton monde'}
+__englishDialogs__ = {'worldFolderSelection': 'Select the folder where your worlds are located:', 'worldpick': 'Pick your world'}
 __localisation__ = {'fr_CA': __frenchDialogs__, 'en': __englishDialogs__}
 
 def get_dialog(key):
